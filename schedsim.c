@@ -17,7 +17,7 @@ void findWaitingTimeRR(ProcessType plist[], int n,int quantum)
      //2. Store waiting times of processes in plist[].wt. Initialize this array as 0.
   for(i = 0; i < n; i++){
     rem_bt[i] = plist[i].bt;
-    plist\[i].wt = 0;
+    plist[i].wt = 0;
   }  
   /*4. Keep traversing the all processes while all processes are not done. Do following for i'th process if it is not done yet.
           - If rem_bt[i] > quantum
@@ -33,7 +33,7 @@ void findWaitingTimeRR(ProcessType plist[], int n,int quantum)
          if(rem_bt[i] > 0){
            if(rem_bt[i] > quantum){
              t += quantum;
-             rem_bt -= quantum;
+             rem_bt[i] -= quantum;
            }
            else{
              t += rem_bt[i];
